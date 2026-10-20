@@ -1,6 +1,6 @@
 # <Architecture & Components>
 ## Context
-<Short paragraph: what this section covers for our project.>
+<Short paragraph: This section covers architecture related things for our project.>
 ## Content
 - <Bullets or tables as required by your section>
 - <Add links/screenshots if helpful>

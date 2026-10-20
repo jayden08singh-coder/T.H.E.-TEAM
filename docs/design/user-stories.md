@@ -1,6 +1,6 @@
 # user-stories
 ## section created by Jayden Singh
-Short paragraph: user stories in this section. Will update soon.
+Short paragraph: This section contains user stories for our project and will be updated soon.
 ## Content
 - <Bullets or tables as required by your section>
 - <Add links/screenshots if helpful>

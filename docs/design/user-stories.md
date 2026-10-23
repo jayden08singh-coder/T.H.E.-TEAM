@@ -1,11 +1,22 @@
-# user-stories
-## section created by Jayden Singh
-Short paragraph: user stories in this section. Will update soon.
+# User Stories
+
+## Context
+User stories and acceptance criteria for the York Markham campus food discovery game.
+
 ## Content
-- <Bullets or tables as required by your section>
-- <Add links/screenshots if helpful>
+* **Primary User Story:**  
+  > **As a** York Markham student,  
+  > **I want to** explore food locations through interactive game challenges,  
+  > **So that** I can discover affordable dining options around campus in an engaging way.
+
+* **Acceptance Criteria:**
+  - [ ] Display an interactive map or list of campus food locations.
+  - [ ] Trigger game challenges when arriving at or selecting a dining spot.
+  - [ ] Reveal pricing and dining details upon successful completion of a challenge.
+
 ## Decisions (if any)
-- <Decision> — owner, date
+- **Focus on York Markham campus scope only** — Jayden Singh, October 2026
+
 ## Next Steps
-- [ ] <Action 1> (owner, due date)
-- [ ] <Action 2> (owner, due date) 
+- [ ] Draft 2 additional user stories for different user roles (e.g., faculty or visitors) (Team, due TBD)
+- [ ] Review acceptance criteria with the project team (Team, due TBD)

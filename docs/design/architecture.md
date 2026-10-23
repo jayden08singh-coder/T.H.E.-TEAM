@@ -1,11 +1,16 @@
-# <Architecture & Components>
+# Architecture & Components
+
 ## Context
-<Short paragraph: what this section covers for our project.>
+This section covers the technical architecture and component breakdown for our campus food game project.
+
 ## Content
-- <Bullets or tables as required by your section>
-- <Add links/screenshots if helpful>
+* **Frontend (UI):** Built using HTML, CSS, and JavaScript to deliver a responsive, web-based game interface and interactive map view.
+* **Game Logic & Mechanics:** Core JavaScript scripts handling challenge progression, score calculation, and user state.
+* **Data / Backend Layer:** Local storage or lightweight server management (Node.js) to manage campus dining data and user session progress.
+
 ## Decisions (if any)
-- <Decision> — owner, date
+- **Use web-based vanilla stack (HTML/CSS/JS/Node.js) for easy cross-platform access** — Project Team, October 2026
+
 ## Next Steps
-- [ ] <Action 1> (owner, due date)
-- [ ] <Action 2> (owner, due date)
+- [ ] Finalize component interaction wireframes (Team, due TBD)
+- [ ] Set up the core project repository structure on GitHub (Team, due TBD)

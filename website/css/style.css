@@ -1,0 +1,411 @@
+/* ============================================================
+   style.css
+   Sections: 1 Colours  2 Base  3 Header/Footer  4 Screens
+             5 Buttons  6 Welcome  7 Option cards  8 Summary
+             9 Responsive
+   ============================================================ */
+
+/* ---------- 1. Colours and sizes (change them here) ---------- */
+:root {
+  --crimson: #b3122b;        /* primary: York-style crimson */
+  --crimson-dark: #8f0e22;
+  --crimson-light: #fbe9ec;
+  --yellow: #ffc83d;         /* accent: warm yellow */
+  --yellow-light: #fff4d1;
+  --white: #ffffff;
+  --grey-bg: #f6f6f7;        /* very light grey page background */
+  --grey-border: #e4e4e8;
+  --text: #25252b;
+  --text-soft: #6a6a75;
+
+  --radius: 18px;
+  --shadow: 0 4px 14px rgba(40, 20, 25, 0.08);
+  --shadow-hover: 0 8px 22px rgba(40, 20, 25, 0.14);
+}
+
+/* ---------- 2. Base styles ---------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text);
+  background: var(--grey-bg);
+}
+
+h1, h2, h3 {
+  margin: 0;
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--crimson);
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* Visible outline when using the keyboard */
+button:focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+/* ---------- 3. Header and footer ---------- */
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 1.5rem;
+  background: var(--white);
+  border-bottom: 4px solid var(--yellow);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.logo-emoji {
+  font-size: 1.6rem;
+}
+
+.logo-text {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--crimson);
+}
+
+/* Progress dots */
+.progress {
+  display: flex;
+  gap: 0.5rem;
+  visibility: hidden;
+}
+
+.progress.visible {
+  visibility: visible;
+}
+
+.progress-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--grey-border);
+  transition: background 0.2s;
+}
+
+.progress-dot.filled {
+  background: var(--crimson);
+}
+
+.site-footer {
+  padding: 1.25rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-soft);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+/* ---------- 4. Screens ---------- */
+/* Only the screen with the "active" class is shown */
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+.step-label {
+  margin: 0 0 0.5rem;
+  font-weight: 700;
+  color: var(--text-soft);
+}
+
+.screen h2 {
+  font-size: 2.2rem;
+}
+
+.screen-hint {
+  margin: 0.5rem 0 2rem;
+  color: var(--text-soft);
+}
+
+/* ---------- 5. Buttons ---------- */
+.btn {
+  padding: 0.85rem 2rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--crimson);
+  color: var(--white);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--crimson-dark);
+}
+
+.btn-secondary {
+  background: var(--white);
+  color: var(--crimson);
+  border-color: var(--crimson);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: var(--crimson-light);
+}
+
+.btn-large {
+  padding: 1.1rem 2.8rem;
+  font-size: 1.25rem;
+  box-shadow: 0 6px 0 var(--yellow);
+}
+
+.btn:disabled {
+  background: var(--grey-border);
+  color: #9a9aa5;
+  cursor: not-allowed;
+}
+
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+/* ---------- 6. Welcome screen ---------- */
+.welcome-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: center;
+  gap: 2.5rem;
+  padding-top: 1rem;
+}
+
+.welcome-text h1 {
+  font-size: 3.8rem;
+}
+
+.welcome-tagline {
+  margin: 0.75rem 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.welcome-intro {
+  margin: 1rem 0 2rem;
+  max-width: 34rem;
+  color: var(--text-soft);
+}
+
+/* Big round "plate" with food emojis. Replace with a real photo later. */
+.welcome-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.plate {
+  position: relative;
+  width: min(340px, 80vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--yellow-light);
+  border: 10px solid var(--white);
+  box-shadow: var(--shadow-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plate-emoji {
+  position: absolute;
+  line-height: 1;
+}
+
+.plate-main  { position: static; font-size: 8rem; }
+.plate-one   { top: 6%;    left: 8%;   font-size: 3.2rem; }
+.plate-two   { top: 14%;   right: 4%;  font-size: 3rem; }
+.plate-three { bottom: 6%; right: 18%; font-size: 3rem; }
+
+/* ---------- 7. Option cards ---------- */
+.option-grid {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.option-grid-three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.option-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 160px;
+  padding: 1.5rem 1rem;
+  background: var(--white);
+  border: 3px solid transparent;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  font-family: inherit;
+  cursor: pointer;
+  transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
+}
+
+.option-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-hover);
+}
+
+.option-emoji {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.option-label {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+/* Selected card: crimson border, light red fill, and a yellow check mark */
+.option-card.selected {
+  position: relative;
+  border-color: var(--crimson);
+  background: var(--crimson-light);
+}
+
+.option-card.selected .option-label {
+  color: var(--crimson);
+}
+
+.option-card.selected::after {
+  content: "✓";
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--yellow);
+  color: var(--crimson-dark);
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+/* ---------- 8. Summary box (end of screen 4) ---------- */
+.summary-box {
+  margin-top: 2rem;
+  padding: 1.75rem;
+  background: var(--white);
+  border-left: 8px solid var(--yellow);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.summary-box[hidden],
+.nav-buttons[hidden] {
+  display: none;
+}
+
+.summary-box h3 {
+  font-size: 1.5rem;
+}
+
+.summary-list {
+  margin: 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+
+.summary-note {
+  margin: 0 0 1.25rem;
+  color: var(--text-soft);
+}
+
+/* ---------- 9. Responsive: tablets and phones ---------- */
+@media (max-width: 800px) {
+  .welcome-layout {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .welcome-intro {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .welcome-text h1 {
+    font-size: 3rem;
+  }
+
+  /* Put the food visual under the text on small screens */
+  .welcome-visual {
+    order: 2;
+  }
+
+  .option-grid-three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  main {
+    padding: 1.5rem 1rem 2.5rem;
+  }
+
+  .screen h2 {
+    font-size: 1.8rem;
+  }
+
+  .option-card {
+    min-height: 130px;
+  }
+
+  .option-emoji {
+    font-size: 2.4rem;
+  }
+
+  .nav-buttons .btn {
+    flex: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

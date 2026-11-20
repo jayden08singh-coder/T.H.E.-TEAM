@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Campus Bites | Food near York University Markham</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Top bar: logo and progress dots (progress is hidden on the welcome screen) -->
+  <header class="site-header">
+    <button class="logo" id="logo-button" type="button" aria-label="Go to the welcome page">
+      <span class="logo-emoji" aria-hidden="true">🍔</span>
+      <span class="logo-text">Campus Bites</span>
+    </button>
+    <div class="progress" id="progress" aria-hidden="true">
+      <span class="progress-dot"></span>
+      <span class="progress-dot"></span>
+      <span class="progress-dot"></span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- SCREEN 1: WELCOME -->
+    <section class="screen active" id="screen-welcome">
+      <div class="welcome-layout">
+        <div class="welcome-text">
+          <h1>Campus Bites</h1>
+          <p class="welcome-tagline">Hungry between classes?</p>
+          <p class="welcome-intro">
+            Discover food options near York University Markham.
+            Tell us what you're craving, your budget, and how you want to eat,
+            and we'll help you find a spot that fits your day.
+          </p>
+          <button class="btn btn-primary btn-large" id="find-food-button" type="button">Find Food</button>
+        </div>
+
+        <!-- Food visual placeholder. Replace with a real photo later. -->
+        <div class="welcome-visual" aria-hidden="true">
+          <div class="plate">
+            <span class="plate-emoji plate-main">🍕</span>
+            <span class="plate-emoji plate-one">🍔</span>
+            <span class="plate-emoji plate-two">🌯</span>
+            <span class="plate-emoji plate-three">🥤</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCREEN 2: FOOD CATEGORY -->
+    <section class="screen" id="screen-category">
+      <p class="step-label">Step 1 of 3</p>
+      <h2>What are you craving?</h2>
+      <p class="screen-hint">Pick one to get started.</p>
+      <div class="option-grid option-grid-three" id="category-options"></div>
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" id="category-back" type="button">Back</button>
+        <button class="btn btn-primary" id="category-continue" type="button" disabled>Continue</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 3: BUDGET -->
+    <section class="screen" id="screen-budget">
+      <p class="step-label">Step 2 of 3</p>
+      <h2>What's your budget?</h2>
+      <p class="screen-hint">Choose what feels right for today.</p>
+      <div class="option-grid option-grid-three" id="budget-options"></div>
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" id="budget-back" type="button">Back</button>
+        <button class="btn btn-primary" id="budget-continue" type="button" disabled>Continue</button>
+      </div>
+    </section>
+
+    <!-- SCREEN 4: DINING PREFERENCE -->
+    <section class="screen" id="screen-dining">
+      <p class="step-label">Step 3 of 3</p>
+      <h2>How would you like to eat?</h2>
+      <p class="screen-hint">Pick the style that fits your schedule.</p>
+      <div class="option-grid option-grid-three" id="dining-options"></div>
+
+      <!-- Shown after Continue on this screen. Recommendations come in Milestone 2. -->
+      <div class="summary-box" id="summary-box" hidden>
+        <h3>Your choices are saved ✅</h3>
+        <ul class="summary-list">
+          <li><strong>Craving:</strong> <span id="summary-category"></span></li>
+          <li><strong>Budget:</strong> <span id="summary-budget"></span></li>
+          <li><strong>Dining:</strong> <span id="summary-dining"></span></li>
+        </ul>
+        <p class="summary-note">Restaurant recommendations are coming in the next milestone.</p>
+        <button class="btn btn-secondary" id="start-over-button" type="button">Start over</button>
+      </div>
+
+      <div class="nav-buttons" id="dining-nav">
+        <button class="btn btn-secondary" id="dining-back" type="button">Back</button>
+        <button class="btn btn-primary" id="dining-continue" type="button" disabled>Continue</button>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Campus Bites · A York University Markham student project</p>
+  </footer>
+
+  <!-- data.js must load before main.js because main.js uses its lists -->
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
